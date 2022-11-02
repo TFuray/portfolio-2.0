@@ -1,24 +1,53 @@
+function getDayName(day) {
+    let ar1 = new Array(
+        "Sunday",
+        "Monday",
+        "Tueday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    )
+    return ar1[day]
+}
+
 function displayDate() {
     let currentTime = new Date()
-    let month = currentTime.getMonth() + 1
+    months = [
+        "January",
+        "Feburay",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ]
+
+    let currentMonth = currentTime.getMonth()
     let day = currentTime.getDate()
     let year = currentTime.getFullYear()
     let hour = currentTime.getHours()
     let minute = currentTime.getMinutes()
+    let weekday = currentTime.getDay() - 1
+    let dayName = getDayName(currentTime.getDay())
 
-    if (minute < 10){
-        minute = `0${minute}`
-    }
+    let ampm = hour >= 12 ? "pm" : "am"
+    hour = hour % 12
+    hour = hour ? hour : 12
+    minute = minute < 10 ? "0" + minute : minute
 
-    if (hour <= 12){
+    let time = `${hour}:${minute} ${ampm}`
+    let strMonth = months[currentMonth]
+    console.log(weekday)
+
     document.getElementById(
         "date"
-    ).innerText = `${hour}:${minute}a.m. ${month} / ${day} / ${year}`
-    }else{
-            document.getElementById(
-                "date"
-            ).innerText = `${hour-12}:${minute}p.m. ${month} / ${day} / ${year}`
-    }
+    ).innerText = `${dayName}, ${strMonth} ${weekday}, ${year} ${time}`
 }
 
 displayDate()
