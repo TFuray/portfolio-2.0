@@ -2276,6 +2276,21 @@ button,
     padding-top: 0; }
 
 
-/* 
-img.headshot {
-} */
+
+#contact-header {
+  padding-bottom: 0 !important;
+}
+
+h1.about-heading{
+  margin-left: auto !important;
+}
+
+@media screen and (max-width: 1680px){
+  article.hide-small {
+    display: none;
+}
+}
+
+p.about-font{
+  font-size: 22px;
+}
