@@ -47,7 +47,7 @@ function displayDate() {
 
     document.getElementById(
         "date"
-    ).innerText = `${dayName}, ${strMonth} ${weekday}, ${year} ${time}`
+    ).innerText = `${dayName}, ${strMonth} ${day}, ${year} ${time}`
 }
 
 displayDate()
